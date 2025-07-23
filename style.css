@@ -1,0 +1,818 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #111;
+    color: #fff;
+  }
+  
+  .section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  /* Navbar Styles */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Navbar layout */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 70px;
+    width: 112px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px 10px;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #ff1e56;
+    border-radius: 4px;
+    color:#111;
+  }
+  
+  /* Add padding to sections so content isn't hidden under fixed navbar */
+  .section {
+    padding-top: 100px;
+  }
+  
+  .hero-section {
+    background: url('images/Gym_Background.webp') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+  }
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+  
+  /* About section */
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+    padding: 60px 20px;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-text h2 {
+    font-size: 36px;
+    color: #111;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .about-image {
+    flex: 1;
+    min-width: 300px;
+    animation: float 3s forwards infinite;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+
+/* Services section */
+
+  .services-section .service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    background: linear-gradient(to top, aquamarine,yellow);
+    margin-top: 19px;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px deeppink;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 6px;
+    height: 300px;
+    object-fit: cover;
+  }
+  h2{
+    font-size: 50px;
+    animation: zoomIn 5s infinite;
+  }
+  .card h3 {
+    margin-top: 10px;
+  }
+
+  /* Trainer-Section */
+
+
+  .trainer-card {
+    /* background: linear-gradient(to bottom,white,black); */
+    border-radius: 20px;
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+  }
+  h1{
+    font-size: 40px;
+    animation: slideUp 5s infinite;
+  }
+
+  
+  .trainer-card img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+  }
+  .trainer-card h3 {
+    margin: 10px 0 5px;
+  }
+  .trainer-card p {
+    font-size: 25px;
+    font-style: bold;
+    color: white;
+  }
+  .swiper {
+    width: 100%;
+    padding: 40px 0;
+  }
+  
+  
+  
+  /* Scroll Animation Classes */
+  .scroll-element {
+    opacity: 0;
+    transform: translateY(100px); /* for scroll down */
+  }
+  .scroll-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  /* Owner Photo */
+
+
+
+  /* Intro Section */
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background:linear-gradient(to top,aquamarine,yellow);
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+/* Image Styling */
+.owner-image {
+  flex: 1;
+}
+
+.owner-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Text Styling */
+.owner-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.owner-info h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.owner-info p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: deeppink;
+}
+
+
+  /* Videos Section /*
+
+
+  
+
+//* Video Section */
+.video-section {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-card {
+  width: 400px;
+  background: linear-gradient(to bottom, black,deeppink);
+  border-radius: 80px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
+}
+.video-card:hover{
+  box-shadow: 0 2px 10px 1px black;
+}
+.video-card video {
+  width: 400px;
+  height: 500px;
+}
+
+.video-card h3 {
+  font-size: 18px;
+  padding: 15px;
+  color: #f4f4f4;
+}
+
+/* Scroll Animations */
+.fade-in,
+.zoom-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.zoom-in {
+  transform: scale(0.9);
+}
+
+.fade-in.visible,
+.zoom-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Plan */
+
+.plan-section {
+  padding: 60px 20px;
+  background:linear-gradient(to top, red,deeppink);
+  text-align: center;
+}
+
+.plan-section h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout for Cards */
+.plans-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 per row */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual Card Styling */
+.plan-card {
+  background-color: black;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  margin-bottom: 19px;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.plan-card h3 {
+  font-size: 2rem;
+  font-style: bold;
+  color: gold;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.plan-card .price {
+  font-size: 1.5rem;
+  color: white;
+  border: 4px solid blue;
+  border-radius: 18px;
+  margin: 8px 0;
+  animation: blink 5s ease-in infinite;
+}
+.plan-card .pric {
+  font-size: 1.5rem;
+  color: white;
+  border: 4px solid crimson;
+  border-radius: 50%;
+  margin: 8px 0;
+  animation: blink 5s ease-in infinite;
+}
+.plan-card .Diet {
+  font-size: 25px;
+  color: white;
+  margin: 8px 0;
+  border: 3px solid whitesmoke;
+  border-radius: 1px;
+  animation: blink 5s ease-in infinite;
+}
+
+.plan-card .Locker {
+  font-size: 1.3rem;
+  color: white;
+  border: 4px solid blue;
+  border-radius: 1px;
+  margin-top: 10px;
+  animation: blink 5s ease-in infinite;
+}
+
+/* Contact Section */
+
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 36px;
+  color: white;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Contact Section Layout */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: #f4f4f4;
+  gap: 30px;
+}
+
+/* Left side styles */
+.contact-left {
+  flex: 1 1 45%;
+  background-color: black;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Map inside left */
+.contact-left .map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Location and social info */
+.contact-left h3 {
+  color: #ff4d4d;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-left p {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4d4d;
+  transform: scale(1.1);
+}
+
+
+/* Contact right*/
+
+
+form {
+  width: 700px;
+  height: 100%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.6s ease;
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  background-color: #000;
+  border: 3px solid blue;
+  border-radius: 8px;
+  color: #f4f4f4;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  width: 200px;
+  margin-left: 200px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Optional animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  /* Animations */
+
+   /* Animation */
+   @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  .slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease forwards;
+  }
+  @keyframes slideDown {
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-100px);
+    }
+    60% {
+      transform: translateY(-50px);
+    }
+  }
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+/* ======================= */
+/* 📱 Mobile Responsive CSS */
+/* ======================= */
+
+@media (max-width: 576px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* About Section */
+  .about-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  /* Services */
+  .card {
+    width: 90%;
+  }
+
+  /* Trainer Section */
+  .trainer-card {
+    margin-top: 50px;
+    flex: 0 0 300px;
+  }
+
+  .trainer-card img {
+    width: 200px;
+    gap: 20px;
+    height:500px;
+  
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .trainer-card p {
+    font-size: 20px;
+  }
+
+  /* Intro Section */
+  .intro-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .owner-info h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .owner-info p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .owner-image img {
+    width: 100%;
+  }
+
+  /* Video Section */
+  .video-card {
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .video-card video {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-card h3 {
+    font-size: 16px;
+  }
+
+  /* Plan Section */
+  .plans-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .plan-card h3 {
+    font-size: 20px;
+  }
+
+  .plan-card .price,
+  .plan-card .pric,
+  .plan-card .Diet,
+  .plan-card .Locker {
+    font-size: 16px;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-left,
+  form {
+    width: 100%;
+  }
+
+  .contact-left p,
+  .contact-left h3 {
+    font-size: 16px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 14px;
+  }
+
+  form button[type="submit"] {
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+}
+
+  
